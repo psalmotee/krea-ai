@@ -83,12 +83,7 @@ export default function Home() {
         </section>
 
         {/* Generate Tools Section */}
-        <section className="space-y-6">
-          <h2 className="text-2xl font-bold text-base-content">Generate</h2>
-          <div >
             <Generate />
-          </div>
-        </section>
 
         {/* Gallery Section */}
         <GallerySection />

@@ -115,9 +115,9 @@ export function HeroCarousel() {
               key={slide.id}
               className={`relative transition-all duration-700 ease-in-out rounded-xl overflow-hidden ${
                 isActive
-                  ? "w-2/3 opacity-100 scale-100"
+                  ? "w-2/3 opacity-100"
                   : isNext
-                  ? "w-1/3 opacity-70 scale-95"
+                  ? "w-1/3 opacity-70"
                   : "hidden"
               }`}
             >

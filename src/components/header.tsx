@@ -26,7 +26,7 @@ function Header() {
           <span className="hidden font-bold sm:inline-block text-base-content">
             K
           </span>
-          <div className="h-4 w-4 rounded-full bg-gradient-to-br from-blue-500 to-purple-600" />
+          <div className="h-4 w-4 rounded-full bg-gradient-to-br from-blue-200 to-purple-300" />
           <p className="flex justify-center items-center">
             kree AI
             <span className="text-xs text-base-content/60">
@@ -36,7 +36,7 @@ function Header() {
         </div>
 
         {/* Navigation */}
-        <div className="navbar-center items-center text-sm font-medium bg-base-content/5  px-3 py-2 rounded-lg">
+        <div className="navbar-center items-center text-sm font-medium bg-base-content/5 px-3 py-2 rounded-lg">
           <Link
             href="#"
             className="transition-colors hover:bg-base-100 px-2 py-1 rounded-lg flex justify-center items-center text-center text-base-content"
@@ -84,28 +84,26 @@ function Header() {
         <div className="navbar-end lex items-center space-x-2">
           <Link
             href="#"
-            className="transition-colors hover:bg-base-100 px-2 py-1 rounded-lg flex justify-center items-center text-center text-base-content space-x-1"
+            className="transition-colors bg-base-content/5 hover:bg-base-100 px-2 py-1 rounded-lg flex justify-center items-center text-center text-base-content space-x-1"
           >
             <Images className="h-4 w-4 " />
             <span>Gallery</span>
           </Link>
           <Link
             href="#"
-            className="transition-colors hover:bg-base-100 px-2 py-1 rounded-lg flex justify-center items-center text-center text-base-content space-x-1"
+            className="transition-colors bg-base-content/5 hover:bg-base-100 px-2 py-1 rounded-lg flex justify-center items-center text-center text-base-content space-x-1"
           >
             <Folder className="h-4 w-4 " />
             <span>Projects</span>
           </Link>
           <button
-            className="btn-ghost-custom hover:bg-base-100 px-2 py-1 rounded-lg"
+            className="btn-ghost-custom bg-base-content/5 hover:bg-base-100 px-2 py-1 rounded-lg"
             title="Notifications"
           >
             <Bell className="h-4 w-4" />
           </button>
           <ThemeToggle />
-          <button className="btn-ghost-custom" title="User">
-            <User className="h-4 w-4" />
-          </button>
+          <div className="h-4 w-4 rounded-full bg-gradient-to-br from-blue-200 to-purple-300" />
         </div>
       </div>
     </header>
