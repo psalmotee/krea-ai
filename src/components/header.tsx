@@ -27,12 +27,14 @@ function Header() {
             K
           </span>
           <div className="h-4 w-4 rounded-full bg-gradient-to-br from-blue-200 to-purple-300" />
-          <p className="flex justify-center items-center">
-            kree AI
-            <span className="text-xs text-base-content/60">
-              <ChevronDown size={12} />
-            </span>
-          </p>
+          <div className="flex justify-center items-center">
+            <p>
+              kree AI
+            </p>
+              <span className="text-xs text-base-content/60">
+                <ChevronDown className="w-4 h-4" />
+              </span>
+          </div>
         </div>
 
         {/* Navigation */}

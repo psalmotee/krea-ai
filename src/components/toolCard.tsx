@@ -7,6 +7,7 @@ import {
   PaintBucket,
   PersonStanding,
   Video,
+  ChevronDown,
 } from "lucide-react";
 
 const generateTools = [
@@ -16,21 +17,21 @@ const generateTools = [
     icon: <Image className="w-4 h-4 text-white" />,
     badge: "New",
     buttonText: "Open",
-    iconBg: "bg-blue-500",
+    iconBg: "bg-gradient-to-br from-[#506980] to-[#bfcfde]",
   },
   {
     title: "Video",
     description: "Generate videos with Music, Flow, Harmony, LUTs and more",
     icon: <Video className="w-4 h-4 text-white" />,
     buttonText: "Open",
-    iconBg: "bg-yellow-500",
+    iconBg: "bg-[#f3ac18]",
   },
   {
     title: "Realtime",
     description: "Realtime model for images and instant feedback loops",
     icon: <Brush className="w-4 h-4 text-white" />,
     buttonText: "Open",
-    iconBg: "bg-cyan-500",
+    iconBg: "bg-gradient-to-br from-[#35b0f2] to-[#aceafe]",
   },
   {
     title: "Enhancer",
@@ -38,7 +39,7 @@ const generateTools = [
     icon: <PaintBucket className="w-4 h-4 text-white" />,
     badge: "New",
     buttonText: "Open",
-    iconBg: "bg-gray-800",
+    iconBg: "bg-gradient-to-br from-[#1c1c1c] to-[#676767]",
   },
   {
     title: "Edit",
@@ -46,7 +47,7 @@ const generateTools = [
     icon: <DraftingCompass className="w-4 h-4 text-white" />,
     badge: "New",
     buttonText: "Open",
-    iconBg: "bg-purple-500",
+    iconBg: "bg-gradient-to-br from-[#3a1d5e] to-[#9c82ba]",
   },
   {
     title: "Video Layer",
@@ -54,7 +55,7 @@ const generateTools = [
     icon: <Flashlight className="w-4 h-4 text-white" />,
     badge: "New",
     buttonText: "Open",
-    iconBg: "bg-indigo-500",
+    iconBg: "bg-gradient-to-br from-[#2f524b] to-[#98b294]",
   },
   {
     title: "Motion Transfer",
@@ -62,14 +63,14 @@ const generateTools = [
     icon: <PersonStanding className="w-4 h-4 text-white" />,
     badge: "New",
     buttonText: "Open",
-    iconBg: "bg-black",
+    iconBg: "bg-[#191d1c]",
   },
   {
     title: "Train",
     description: "Train models by supplying your style, products, or datasets",
     icon: <CircleGauge className="w-4 h-4 text-white" />,
     buttonText: "Open",
-    iconBg: "bg-orange-500",
+    iconBg: "bg-[#98b294]",
   },
 ];
 
@@ -80,8 +81,8 @@ function Generate() {
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-base-content">Generate</h2>
 
-        <button className="text-sm text-blue-600 hover:underline">
-          Show all
+        <button className="flex justify-center items-center text-sm text-blue-600 hover:underline">
+          <span><ChevronDown className="w-4 h-4 text-blue-600" /></span>Show all
         </button>
       </div>
 
