@@ -82,7 +82,10 @@ function Generate() {
         <h2 className="text-lg font-bold text-base-content">Generate</h2>
 
         <button className="flex justify-center items-center text-sm text-blue-600 hover:underline">
-          <span><ChevronDown className="w-4 h-4 text-blue-600" /></span>Show all
+          <span>
+            <ChevronDown className="w-4 h-4 text-blue-600" />
+          </span>
+          Show all
         </button>
       </div>
 
@@ -106,17 +109,19 @@ function Generate() {
                 <div className="flex items-center gap-2">
                   <h3 className="text-sm font-medium">{tool.title}</h3>
                   {tool.badge && (
-                    <span className="text-[10px] font-semibold bg-blue-600 text-base-100 px-1.5 py-0.5 rounded-full">
+                    <span className="text-[10px] font-semibold bg-[#216ef4] text-base-100 px-1.5 py-0.5 rounded-full">
                       {tool.badge}
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-gray-500">{tool.description}</p>
+                <p className="text-xs text-base-content/70">
+                  {tool.description}
+                </p>
               </div>
             </div>
 
             {/* Right: button */}
-            <button className="ml-4 text-xs inline-flex items-center justify-center rounded-full bg-base-content/5 px-2 py-1 font-medium text-black shadow-md hover:bg-white">
+            <button className="ml-4 text-xs inline-flex items-center justify-center rounded-full bg-base-content/5 px-2 py-1 font-medium text-base-content shadow-md hover:bg-base-content/10">
               {tool.buttonText}
             </button>
           </div>
