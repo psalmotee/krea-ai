@@ -13,7 +13,7 @@ import {
   Menu,
   ChevronDown,
 } from "lucide-react";
-import ThemeToggle from "./theme-toggle";
+import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import KreaLogo from "/public/image/Krea-logo-black.png";
