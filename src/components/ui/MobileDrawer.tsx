@@ -14,17 +14,19 @@ import {
   X,
 } from "lucide-react";
 import KreaLogo from "/public/image/Krea-logo-black.png";
+import { usePathname } from "next/navigation";
 
 interface MobileDrawerProps {
   id: string;
 }
 
 function MobileDrawer({ id }: MobileDrawerProps) {
-
-   const navLinks = [
-      { href: "#", icon: <Home />, label: "Home" },
-      { href: "#", icon: <Images />, label: "Images" },
-      { href: "#", icon: <Video />, label: "Video" },
+  const pathname = usePathname();
+  
+  const navLinks = [
+    { href: "/", icon: <Home />, label: "Home" },
+    { href: "#", icon: <Images />, label: "Images" },
+    { href: "#", icon: <Video />, label: "Video" },
       { href: "#", icon: <Brush />, label: "Brush" },
       { href: "#", icon: <PaintBucket />, label: "PaintBucket" },
       { href: "#", icon: <DraftingCompass />, label: "DraftingCompass" },
@@ -49,23 +51,30 @@ function MobileDrawer({ id }: MobileDrawerProps) {
         </div>
 
         <ul>
-          {navLinks.map((navLink) => (
-            <li key={navLink.label}>
-              <Link
-                href={navLink.href}
-                className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl"
-              >
-                {React.cloneElement(navLink.icon, {
-                  className: "h-4 w-4",
-                })}
-                <span>{navLink.label}</span>
-              </Link>
-            </li>
-          ))}
+          {navLinks.map((navLink) => {
+            const isActive = pathname === navLink.href;
+            return (
+              <li key={navLink.label}>
+                <Link
+                  href={navLink.href}
+                  className={`flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl ${
+                    isActive
+                      ? "bg-base-100 font-semibold shadow-md"
+                      : "hover:bg-base-100"
+                  }`}
+                >
+                  {React.cloneElement(navLink.icon, {
+                    className: "h-4 w-4",
+                  })}
+                  <span>{navLink.label}</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="divider" />
-        
+
         {/* Additional Links */}
         <ul>
           <li>

@@ -1,8 +1,8 @@
-import  Header  from "@/components/Header";
-import Hero from "@/components/Hero";
-import Generate from "@/components/Generate";
-import  Gallery  from "@/components/Gallery";
-import  Footer  from "@/components/Footer";
+import  Header  from "../components/Header";
+import Hero from "../components/Hero";
+import Generate from "../components/Generate";
+import  Gallery  from "../components/Gallery";
+import  Footer  from "../components/Footer";
 
 export default function Home() {
   return (
