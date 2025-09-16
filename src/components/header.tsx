@@ -20,9 +20,19 @@ import Image from "next/image";
 import MobileDrawer from "./ui/MobileDrawer";
 
 function Header() {
+
+  const navLinks = [
+    { href: "#", icon: <Home />, label: "Home" },
+    { href: "#", icon: <Images />, label: "Images" },
+    { href: "#", icon: <Video />, label: "Video" },
+    { href: "#", icon: <Brush />, label: "Brush" },
+    { href: "#", icon: <PaintBucket />, label: "PaintBucket" },
+    { href: "#", icon: <DraftingCompass />, label: "DraftingCompass" },
+    { href: "#", icon: <Folder />, label: "Folder" },
+  ];
   const drawerId = "header-drawer";
   return (
-    <header className="fixed top-0 z-50 w-full bg-base-100/40 backdrop-blur-2xl">
+    <header className="fixed top-0 z-50 w-full bg-white/40 backdrop-blur-2xl">
       <div className="drawer drawer-start">
         <MobileDrawer id={drawerId} />
         <input id={drawerId} type="checkbox" className="drawer-toggle" />
@@ -52,64 +62,20 @@ function Header() {
             </div>
 
             {/* Center nav */}
-            <div className="navbar-center hidden sm:flex bg-base-300 h-12 rounded-xl">
+            <div className="navbar-center hidden sm:flex bg-gray-300 h-12 rounded-xl">
               <ul className="menu menu-horizontal px-1 gap-1">
-                <li>
-                  <Link
-                    href="#"
-                    className="transition-colors hover:bg-base-100 px-4 py-3 rounded-xl flex justify-center items-center text-base-content"
-                  >
-                    <Home className="h-4 w-4" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="transition-colors hover:bg-base-100 px-4 py-3 rounded-xl flex justify-center items-center text-base-content"
-                  >
-                    <Images className="h-4 w-4" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="transition-colors hover:bg-base-100 px-4 py-3 rounded-xl flex justify-center items-center text-base-content"
-                  >
-                    <Video className="h-4 w-4" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="transition-colors hover:bg-base-100 px-4 py-3 rounded-xl flex justify-center items-center text-base-content"
-                  >
-                    <Brush className="h-4 w-4" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="transition-colors hover:bg-base-100 px-4 py-3 rounded-xl flex justify-center items-center text-base-content"
-                  >
-                    <PaintBucket className="h-4 w-4" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="transition-colors hover:bg-base-100 px-4 py-3 rounded-xl flex justify-center items-center text-base-content"
-                  >
-                    <DraftingCompass className="h-4 w-4" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="transition-colors hover:bg-base-100 px-4 py-3 rounded-xl flex justify-center items-center text-base-content"
-                  >
-                    <Folder className="h-4 w-4" />
-                  </Link>
-                </li>
+                {navLinks.map((navLink) => (
+                  <li key={navLink.label}>
+                    <Link
+                      href={navLink.href}
+                      className="transition-colors hover:bg-base-100 px-4 py-3 rounded-xl flex justify-center items-center text-base-content"
+                    >
+                      {React.cloneElement(navLink.icon, {
+                        className: "h-4 w-4",
+                      })}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 

@@ -10,7 +10,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
-import Button from "./ui/button";
+import Button from "./ui/Button";
 
 const generateTools = [
   {
@@ -126,7 +126,8 @@ function Generate() {
             </div>
 
             {/* Right: button */}
-            <Button variant="secondary">
+            <Button variant="secondary"
+              ariaLabel={tool.buttonText}>
               {tool.buttonText}
             </Button>
           </div>

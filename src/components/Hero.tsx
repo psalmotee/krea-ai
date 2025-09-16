@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Button from "@/components/ui/button";
+import Button from "@/components/ui/Button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Img1 from "/public/image/img1.jpg";
@@ -185,7 +185,11 @@ export function HeroCarousel() {
               variant="dot"
               onClick={() => setCurrentSlide(index)}
               ariaLabel={`Go to slide ${index + 1}`}
-              className={`${ index === currentSlide ? "bg-base-content" : "bg-base-content/50" }`}
+              className={`${
+                index === currentSlide
+                  ? "bg-base-content"
+                  : "bg-base-content/50"
+              }`}
             >
               {""}
             </Button>
@@ -195,14 +199,14 @@ export function HeroCarousel() {
         {/* Arrows */}
         <div className="flex justify-end gap-3">
           <Button
-            variant="carousel"
+            variant="carouselBtn"
             aria-label="Previous Slide"
             onClick={prevSlide}
           >
             <ChevronLeft size={16} />
           </Button>
           <Button
-            variant="carousel"
+            variant="carouselBtn"
             aria-label="Next Slide"
             onClick={nextSlide}
           >

@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 // import { GeistSans } from "geist/font/sans";
 // import { GeistMono } from "geist/font/mono";
 // import { Analytics } from "@vercel/analytics/next";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "next-themes";
 import { Suspense } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Tools Gallery",
+  title: "Krea AI",
   description: "Discover and explore the best AI tools",
   generator: "v0.app",
 };

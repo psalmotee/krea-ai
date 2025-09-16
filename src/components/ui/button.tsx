@@ -8,7 +8,7 @@ interface ButtonProps {
   onClick?: () => void;
   ariaLabel?: string;
   type?: "button" | "submit";
-  variant?: "primary" | "secondary" | "dot" | "carousel" | "show-all";
+  variant?: "primary" | "secondary" | "dot" | "carouselBtn" | "themeBtn";
   className?: string;
 }
 
@@ -26,10 +26,11 @@ function Button({
   const variantStyles = {
     primary:
       "bg-base-100 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-base-content shadow-md hover:brightness-75",
-      secondary: "ml-4 text-xs px-2 py-1 font-medium bg-base-content/5 text-base-content shadow-md hover:bg-base-content/10",
-    carousel: "bg-base-content/40 text-base-100 hover:bg-base-content/50 p-1",
-    "show-all":
-      "flex justify-center items-center text-sm text-blue-600 hover:underline gap-1",
+    secondary:
+      "ml-4 text-xs px-2 py-1 font-medium bg-base-content/5 text-base-content shadow-md hover:bg-base-content/10",
+    carouselBtn:
+      "bg-base-content/40 text-base-100 hover:bg-base-content/50 p-1",
+   themeBtn: "bg-base-200 hover:bg-base-300 px-2 py-1 rounded-xl",
     dot: "h-2 w-2 rounded-full",
   };
 

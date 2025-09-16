@@ -20,6 +20,16 @@ interface MobileDrawerProps {
 }
 
 export default function MobileDrawer({ id }: MobileDrawerProps) {
+
+   const navLinks = [
+      { href: "#", icon: <Home />, label: "Home" },
+      { href: "#", icon: <Images />, label: "Images" },
+      { href: "#", icon: <Video />, label: "Video" },
+      { href: "#", icon: <Brush />, label: "Brush" },
+      { href: "#", icon: <PaintBucket />, label: "PaintBucket" },
+      { href: "#", icon: <DraftingCompass />, label: "DraftingCompass" },
+      { href: "#", icon: <Folder />, label: "Folder" },
+    ];
   return (
     <div className="drawer-side lg:hidden">
       <label htmlFor={id} className="drawer-overlay" />
@@ -38,63 +48,37 @@ export default function MobileDrawer({ id }: MobileDrawerProps) {
         </div>
 
         <ul>
-          <li>
-            <Link
-              href="#"
-              className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl"
-            >
-              <Home className="h-4 w-4" />
-              <span>Home</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl">
-              <Images className="h-4 w-4" />
-              <span>Images</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl">
-              <Video className="h-4 w-4" />
-              <span>Video</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl">
-              <Brush className="h-4 w-4" />
-              <span>Brush</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl">
-              <PaintBucket className="h-4 w-4" />
-              <span>Paint</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl">
-              <DraftingCompass className="h-4 w-4" />
-              <span>Drafting</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl">
-              <Folder className="h-4 w-4" />
-              <span>Folder</span>
-            </Link>
-          </li>
+          {navLinks.map((navLink) => (
+            <li key={navLink.label}>
+              <Link
+                href={navLink.href}
+                className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl"
+              >
+                {React.cloneElement(navLink.icon, {
+                  className: "h-4 w-4",
+                })}
+                <span>{navLink.label}</span>
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <div className="divider" />
         <ul>
           <li>
-            <Link href="#" className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl">
+            <Link
+              href="#"
+              className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl"
+            >
               <Images className="h-4 w-4" />
               <span>Gallery</span>
             </Link>
           </li>
           <li>
-            <Link href="#" className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl">
+            <Link
+              href="#"
+              className="flex items-center gap-3 hover:bg-base-300 px-4 py-3 rounded-xl"
+            >
               <Folder className="h-4 w-4" />
               <span>Projects</span>
             </Link>
