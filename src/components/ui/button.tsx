@@ -1,59 +1,48 @@
-import * as React from "react";
-import { cn } from "@/lib/utils";
+"use client";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  asChild?: boolean;
-  variant?: "primary" | "secondary" | "accent" | "ghost" | "link" | "outline";
-  size?: "default" | "sm" | "lg";
-  loading?: boolean;
+import React from "react";
+import clsx from "clsx";
+
+interface ButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+  ariaLabel?: string;
+  type?: "button" | "submit";
+  variant?: "primary" | "secondary" | "dot" | "carousel" | "show-all";
+  className?: string;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      className,
-      variant = "primary",
-      size = "default",
-      loading,
-      asChild = false,
-      ...props
-    },
-    ref
-  ) => {
-    const Comp = asChild ? "span" : "button"; 
+function Button({
+  children,
+  onClick,
+  ariaLabel,
+  type = "button",
+  variant = "primary",
+  className,
+}: ButtonProps) {
+  const baseStyles =
+    "inline-flex items-center justify-center rounded-full transition";
 
-    const variantClass = {
-      primary: "btn-primary",
-      secondary: "btn-secondary",
-      accent: "btn-accent",
-      ghost: "btn-ghost",
-      link: "btn-link",
-      outline: "btn-outline",
-    }[variant];
+  const variantStyles = {
+    primary:
+      "bg-base-100 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-base-content shadow-md hover:brightness-75",
+      secondary: "ml-4 text-xs px-2 py-1 font-medium bg-base-content/5 text-base-content shadow-md hover:bg-base-content/10",
+    carousel: "bg-base-content/40 text-base-100 hover:bg-base-content/50 p-1",
+    "show-all":
+      "flex justify-center items-center text-sm text-blue-600 hover:underline gap-1",
+    dot: "h-2 w-2 rounded-full",
+  };
 
-    const sizeClass = {
-      default: "",
-      sm: "btn-sm",
-      lg: "btn-lg",
-    }[size];
+  return (
+    <button
+      type={type}
+      aria-label={ariaLabel}
+      onClick={onClick}
+      className={clsx(baseStyles, variantStyles[variant], className)}
+    >
+      {children}
+    </button>
+  );
+}
 
-    return (
-      <Comp
-        ref={ref}
-        className={cn(
-          "btn",
-          variantClass,
-          sizeClass,
-          loading && "loading",
-          className
-        )}
-        {...props}
-      />
-    );
-  }
-);
-
-Button.displayName = "Button";
-
-export { Button };
+export default Button;

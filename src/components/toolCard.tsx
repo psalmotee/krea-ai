@@ -9,6 +9,8 @@ import {
   Video,
   ChevronDown,
 } from "lucide-react";
+import Link from "next/link";
+import Button from "./ui/button";
 
 const generateTools = [
   {
@@ -81,12 +83,15 @@ function Generate() {
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-base-content">Generate</h2>
 
-        <button className="flex justify-center items-center text-sm text-blue-600 hover:underline">
+        <Link
+          href="/#"
+          className="flex justify-center items-center text-sm text-blue-600 hover:underline"
+        >
           <span>
             <ChevronDown className="w-4 h-4 text-blue-600" />
           </span>
           Show all
-        </button>
+        </Link>
       </div>
 
       {/* Tools grid */}
@@ -121,9 +126,9 @@ function Generate() {
             </div>
 
             {/* Right: button */}
-            <button className="ml-4 text-xs inline-flex items-center justify-center rounded-full bg-base-content/5 px-2 py-1 font-medium text-base-content shadow-md hover:bg-base-content/10">
+            <Button variant="secondary">
               {tool.buttonText}
-            </button>
+            </Button>
           </div>
         ))}
       </div>
