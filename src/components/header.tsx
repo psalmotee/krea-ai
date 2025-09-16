@@ -15,22 +15,26 @@ import {
 } from "lucide-react";
 import ThemeToggle from "./theme-toggle";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import KreaLogo from "/public/image/Krea-logo-black.png";
 import Image from "next/image";
 import MobileDrawer from "./ui/MobileDrawer";
 
 function Header() {
+  const pathname = usePathname();
 
   const navLinks = [
-    { href: "#", icon: <Home />, label: "Home" },
-    { href: "#", icon: <Images />, label: "Images" },
-    { href: "#", icon: <Video />, label: "Video" },
-    { href: "#", icon: <Brush />, label: "Brush" },
-    { href: "#", icon: <PaintBucket />, label: "PaintBucket" },
-    { href: "#", icon: <DraftingCompass />, label: "DraftingCompass" },
-    { href: "#", icon: <Folder />, label: "Folder" },
+    { href: "/", icon: <Home />, label: "Home" },
+    { href: "/#", icon: <Images />, label: "Images" },
+    { href: "/#", icon: <Video />, label: "Video" },
+    { href: "/#", icon: <Brush />, label: "Brush" },
+    { href: "/#", icon: <PaintBucket />, label: "PaintBucket" },
+    { href: "/#", icon: <DraftingCompass />, label: "DraftingCompass" },
+    { href: "/#", icon: <Folder />, label: "Folder" },
   ];
+
   const drawerId = "header-drawer";
+
   return (
     <header className="fixed top-0 z-50 w-full bg-white/40 backdrop-blur-2xl">
       <div className="drawer drawer-start">
@@ -40,14 +44,12 @@ function Header() {
         {/* MAIN NAVBAR */}
         <div className="drawer-content">
           <div className="navbar mx-auto h-14 items-center px-4 sm:px-8">
-
             {/* Left: hamburger (mobile), logo, dot, title */}
             <div className="navbar-start mr-4 flex items-center space-x-2">
-
               {/* hamburger */}
               <label
                 htmlFor={drawerId}
-                className="btn btn-ghost p-1 lg:hidden"
+                className="btn btn-ghost p-1 rounded-xl lg:hidden"
                 aria-label="Open menu"
               >
                 <Menu className="h-5 w-5" />
@@ -67,18 +69,25 @@ function Header() {
             {/* Center nav */}
             <div className="navbar-center hidden sm:flex bg-gray-300 h-12 rounded-xl">
               <ul className="menu menu-horizontal px-1 gap-1">
-                {navLinks.map((navLink) => (
-                  <li key={navLink.label}>
-                    <Link
-                      href={navLink.href}
-                      className="transition-colors hover:bg-base-100 px-4 py-3 rounded-xl flex justify-center items-center text-base-content"
-                    >
-                      {React.cloneElement(navLink.icon, {
-                        className: "h-4 w-4",
-                      })}
-                    </Link>
-                  </li>
-                ))}
+                {navLinks.map((navLink) => {
+                  const isActive = pathname === navLink.href;
+                  return (
+                    <li key={navLink.label}>
+                      <Link
+                        href={navLink.href}
+                        className={`transition-colors px-4 py-3 rounded-xl flex justify-center items-center text-base-content ${
+                          isActive
+                            ? "bg-base-100 font-semibold shadow-md"
+                            : "hover:bg-base-100"
+                        }`}
+                      >
+                        {React.cloneElement(navLink.icon, {
+                          className: "h-4 w-4",
+                        })}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
@@ -86,23 +95,35 @@ function Header() {
             <div className="navbar-end flex items-center space-x-2">
               <div className="hidden lg:flex items-center gap-2">
                 <Link
-                  href="#"
-                  className="transition-colors bg-base-200 hover:bg-base-300 px-2 py-1 rounded-xl flex items-center text-base-content space-x-1"
+                  href="/gallery"
+                  className={`transition-colors px-2 py-1 rounded-xl flex items-center text-base-content space-x-1 ${
+                    pathname === "/gallery"
+                      ? "bg-base-300 font-medium"
+                      : "bg-base-200 hover:bg-base-300"
+                  }`}
                 >
                   <Images className="h-4 w-4" />
                   <span className="text-sm">Gallery</span>
                 </Link>
                 <Link
-                  href="#"
-                  className="transition-colors bg-base-200 hover:bg-base-300 px-2 py-1 rounded-xl flex items-center text-base-content space-x-1"
+                  href="/projects"
+                  className={`transition-colors px-2 py-1 rounded-xl flex items-center text-base-content space-x-1 ${
+                    pathname === "/projects"
+                      ? "bg-base-300 font-medium"
+                      : "bg-base-200 hover:bg-base-300"
+                  }`}
                 >
                   <Folder className="h-4 w-4" />
                   <span className="text-sm">Projects</span>
                 </Link>
               </div>
               <Link
-                href={"#"}
-                className="transition-colors bg-base-200 hover:bg-base-300 px-2.5 py-1.5 rounded-xl"
+                href="/notifications"
+                className={`transition-colors px-2.5 py-1.5 rounded-xl ${
+                  pathname === "/notifications"
+                    ? "bg-base-300"
+                    : "bg-base-200 hover:bg-base-300"
+                }`}
                 title="Notifications"
                 aria-label="Notifications"
               >
