@@ -22,7 +22,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="btn-ghost-custom bg-base-200 hover:bg-base-300 px-2 py-1 rounded-xl"
+      className="bg-base-200 hover:bg-base-300 px-2 py-1 rounded-xl"
       aria-label="Toggle theme"
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
