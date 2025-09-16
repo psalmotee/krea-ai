@@ -13,7 +13,7 @@ import {
   Menu,
   ChevronDown,
 } from "lucide-react";
-import { ThemeToggle } from "./theme-toggle";
+import ThemeToggle from "./theme-toggle";
 import Link from "next/link";
 import KreaLogo from "/public/image/Krea-logo-black.png";
 import Image from "next/image";
@@ -40,8 +40,10 @@ function Header() {
         {/* MAIN NAVBAR */}
         <div className="drawer-content">
           <div className="navbar mx-auto h-14 items-center px-4 sm:px-8">
+
             {/* Left: hamburger (mobile), logo, dot, title */}
             <div className="navbar-start mr-4 flex items-center space-x-2">
+
               {/* hamburger */}
               <label
                 htmlFor={drawerId}
@@ -50,6 +52,7 @@ function Header() {
               >
                 <Menu className="h-5 w-5" />
               </label>
+
               {/* logo */}
               <span className="hidden sm:inline-block font-bold text-base-content">
                 <Image src={KreaLogo} alt="Krea AI" width={16} height={16} />

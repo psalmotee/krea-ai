@@ -12,71 +12,73 @@ import {
 import Link from "next/link";
 import Button from "./ui/Button";
 
-const generateTools = [
-  {
-    title: "Image",
-    description: "Generate images with custom styles, prompts and categories",
-    icon: <Image className="w-4 h-4 text-white" />,
-    badge: "New",
-    buttonText: "Open",
-    iconBg: "bg-gradient-to-br from-[#506980] to-[#bfcfde]",
-  },
-  {
-    title: "Video",
-    description: "Generate videos with Music, Flow, Harmony, LUTs and more",
-    icon: <Video className="w-4 h-4 text-white" />,
-    buttonText: "Open",
-    iconBg: "bg-[#f3ac18]",
-  },
-  {
-    title: "Realtime",
-    description: "Realtime model for images and instant feedback loops",
-    icon: <Brush className="w-4 h-4 text-white" />,
-    buttonText: "Open",
-    iconBg: "bg-gradient-to-br from-[#35b0f2] to-[#aceafe]",
-  },
-  {
-    title: "Enhancer",
-    description: "Enhance and resize images and videos up to 2K/4K",
-    icon: <PaintBucket className="w-4 h-4 text-white" />,
-    badge: "New",
-    buttonText: "Open",
-    iconBg: "bg-gradient-to-br from-[#1c1c1c] to-[#676767]",
-  },
-  {
-    title: "Edit",
-    description: "AI-powered editor for style, aspect ratio and integration",
-    icon: <DraftingCompass className="w-4 h-4 text-white" />,
-    badge: "New",
-    buttonText: "Open",
-    iconBg: "bg-gradient-to-br from-[#3a1d5e] to-[#9c82ba]",
-  },
-  {
-    title: "Video Lipsync",
-    description: "Create talking head videos from text or audio input",
-    icon: <Flashlight className="w-4 h-4 text-white" />,
-    badge: "New",
-    buttonText: "Open",
-    iconBg: "bg-gradient-to-br from-[#2f524b] to-[#98b294]",
-  },
-  {
-    title: "Motion Transfer",
-    description: "Transfer motion to images and animate characters",
-    icon: <PersonStanding className="w-4 h-4 text-white" />,
-    badge: "New",
-    buttonText: "Open",
-    iconBg: "bg-[#191d1c]",
-  },
-  {
-    title: "Train",
-    description: "Train models by supplying your style, products, or datasets",
-    icon: <CircleGauge className="w-4 h-4 text-white" />,
-    buttonText: "Open",
-    iconBg: "bg-[#98b294]",
-  },
-];
-
 function Generate() {
+
+  const generateTools = [
+    {
+      title: "Image",
+      description: "Generate images with custom styles, prompts and categories",
+      icon: <Image className="w-4 h-4 text-white" />,
+      badge: "New",
+      buttonText: "Open",
+      iconBg: "bg-gradient-to-br from-[#506980] to-[#bfcfde]",
+    },
+    {
+      title: "Video",
+      description: "Generate videos with Music, Flow, Harmony, LUTs and more",
+      icon: <Video className="w-4 h-4 text-white" />,
+      buttonText: "Open",
+      iconBg: "bg-[#f3ac18]",
+    },
+    {
+      title: "Realtime",
+      description: "Realtime model for images and instant feedback loops",
+      icon: <Brush className="w-4 h-4 text-white" />,
+      buttonText: "Open",
+      iconBg: "bg-gradient-to-br from-[#35b0f2] to-[#aceafe]",
+    },
+    {
+      title: "Enhancer",
+      description: "Enhance and resize images and videos up to 2K/4K",
+      icon: <PaintBucket className="w-4 h-4 text-white" />,
+      badge: "New",
+      buttonText: "Open",
+      iconBg: "bg-gradient-to-br from-[#1c1c1c] to-[#676767]",
+    },
+    {
+      title: "Edit",
+      description: "AI-powered editor for style, aspect ratio and integration",
+      icon: <DraftingCompass className="w-4 h-4 text-white" />,
+      badge: "New",
+      buttonText: "Open",
+      iconBg: "bg-gradient-to-br from-[#3a1d5e] to-[#9c82ba]",
+    },
+    {
+      title: "Video Lipsync",
+      description: "Create talking head videos from text or audio input",
+      icon: <Flashlight className="w-4 h-4 text-white" />,
+      badge: "New",
+      buttonText: "Open",
+      iconBg: "bg-gradient-to-br from-[#2f524b] to-[#98b294]",
+    },
+    {
+      title: "Motion Transfer",
+      description: "Transfer motion to images and animate characters",
+      icon: <PersonStanding className="w-4 h-4 text-white" />,
+      badge: "New",
+      buttonText: "Open",
+      iconBg: "bg-[#191d1c]",
+    },
+    {
+      title: "Train",
+      description:
+        "Train models by supplying your style, products, or datasets",
+      icon: <CircleGauge className="w-4 h-4 text-white" />,
+      buttonText: "Open",
+      iconBg: "bg-[#98b294]",
+    },
+  ];
+  
   return (
     <section className="w-full">
       {/* Header */}

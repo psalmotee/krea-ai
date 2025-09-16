@@ -81,10 +81,10 @@ const slides = [
   },
 ];
 
-export function HeroCarousel() {
+function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Auto-slide
+  // Auto-slide every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
@@ -104,6 +104,7 @@ export function HeroCarousel() {
 
   return (
     <div className="relative w-full overflow-hidden mt-14">
+
       {/* Slides wrapper */}
       <div className="flex justify-center items-center gap-6 transition-transform duration-700 ease-in-out">
         {slides.map((slide, index) => {
@@ -123,6 +124,8 @@ export function HeroCarousel() {
             }`}
             >
               <div className="relative h-[250px] sm:h-[320px] md:h-[400px]">
+                
+                {/* Image */}
                 <Image
                   src={slide.image}
                   alt={slide.alt}

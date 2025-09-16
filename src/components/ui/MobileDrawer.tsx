@@ -19,7 +19,7 @@ interface MobileDrawerProps {
   id: string;
 }
 
-export default function MobileDrawer({ id }: MobileDrawerProps) {
+function MobileDrawer({ id }: MobileDrawerProps) {
 
    const navLinks = [
       { href: "#", icon: <Home />, label: "Home" },
@@ -41,6 +41,7 @@ export default function MobileDrawer({ id }: MobileDrawerProps) {
               <p className="text-sm font-semibold">krea AI</p>
             </div>
           </div>
+
           {/* small close button */}
           <label htmlFor={id} className="btn btn-ghost btn-sm">
             <X className="h-4 w-4" />
@@ -64,6 +65,8 @@ export default function MobileDrawer({ id }: MobileDrawerProps) {
         </ul>
 
         <div className="divider" />
+        
+        {/* Additional Links */}
         <ul>
           <li>
             <Link
@@ -88,3 +91,5 @@ export default function MobileDrawer({ id }: MobileDrawerProps) {
     </div>
   );
 }
+
+export default MobileDrawer;

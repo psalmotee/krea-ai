@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Krea Clone UI
+
+A modern Next.js 15 App Router project styled with Tailwind CSS v4 + DaisyUI v5 and Lucide Icons.
+This project replicates a sleek UI experience with modular components such as Header, Theme Toggle, Hero, Generate Tools, Gallery, and Footer.
+
+## Tech Stack
+
+Next.js 15 (App Router)
+ – React framework
+
+Tailwind CSS v4
+ – Utility-first CSS
+
+DaisyUI v5
+ – Tailwind component library
+
+Lucide Icons
+ – Beautiful SVG icons
+
+TypeScript – Strict typing support
+
+Responsive & Dark Mode Ready
+
+## Project Structure
+public/
+ └── image/
+     ├── img1.jpg
+     ├── img2.jpg
+     ├── img3.jpg
+     ├── img4.jpg
+     ├── img5.png
+     ├── img6.jpg
+     ├── Krea-logo-black.png
+     ├── Krea-logo-white.png
+     └── mobbin-logo.png
+
+src/
+ ├── app/
+ │   ├── globals.css       # Global styles
+ │   ├── layout.tsx        # Root layout
+ │   └── page.tsx          # Homepage
+ │
+ ├── components/
+ │   ├── ui/
+ │   │   ├── Button.tsx    # Reusable button variants
+ │   │   └── MobileDrawer.tsx # Mobile navigation drawer
+ │   │
+ │   ├── Footer.tsx        # Footer section
+ │   ├── Gallery.tsx       # Gallery card grid
+ │   ├── Generate.tsx      # Generate tools grid
+ │   ├── Header.tsx        # Navbar + Branding
+ │   ├── Hero.tsx          # Hero section
+ │   └── theme-toggle.tsx  # Dark/Light mode toggle
 
 ## Getting Started
+1️⃣ Install dependencies
+npm install
+# or
+yarn install
+# or
+pnpm install
 
-First, run the development server:
-
-```bash
+2️⃣ Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Now open http://localhost:3000
+ 🚀
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3️⃣ Build for production
+npm run build
+npm start
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+Header with Drawer (mobile) + Theme Toggle
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Responsive Hero section
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Generate tools grid with customizable content
 
-## Deploy on Vercel
+Gallery cards with hover animation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Reusable Button component with multiple variants
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Dark/Light mode (DaisyUI theme system)
+
+## Assets
+
+Logos and demo images are located in:
+
+public/image/
+
+## Notes
+
+Fonts can be customized via next/font or Tailwind fontFamily in tailwind.config.js.
+
+You can replace public/image/* with your own assets.
+
+The reusable Button component supports multiple variants, so use it across the project for consistency.
+
+## License
+
+This project is for learning/demo purposes. Replace branding and assets before using in production.
