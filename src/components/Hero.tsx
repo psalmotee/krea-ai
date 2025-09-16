@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Button from "@/components/ui/Button";
+import Button from "./ui/Button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Img1 from "/public/image/img1.jpg";
