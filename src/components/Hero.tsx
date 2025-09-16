@@ -82,6 +82,7 @@ const slides = [
 ];
 
 function HeroCarousel() {
+  
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Auto-slide every 5 seconds

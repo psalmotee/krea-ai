@@ -12,6 +12,7 @@ import {
 import Link from "next/link";
 import Button from "./ui/Button";
 
+
 function Generate() {
 
   const generateTools = [
