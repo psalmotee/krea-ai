@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Button from "@/components/ui/Button";
+import Button from "./ui/Button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Img1 from "/public/image/img1.jpg";
@@ -103,7 +103,7 @@ function HeroCarousel() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden mt-14">
+    <div className="relative w-full overflow-hidden mt-20">
 
       {/* Slides wrapper */}
       <div className="flex justify-center items-center gap-6 transition-transform duration-700 ease-in-out">
