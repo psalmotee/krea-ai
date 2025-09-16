@@ -9,7 +9,7 @@ export default function Home() {
     <div className="min-h-screen bg-base-100">
       <Header />
 
-      <main className="container mx-auto py-8 space-y-12 px-4">
+      <main className="container mx-auto space-y-6 px-4">
         {/* Hero Section */}
           <Hero />
 

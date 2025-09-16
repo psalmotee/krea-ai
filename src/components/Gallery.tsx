@@ -49,8 +49,8 @@ const galleryItems = [
 
 function Gallery() {
   return (
-    <section className="w-full py-8">
-      <h2 className="text-xl font-semibold mb-6">Gallery</h2>
+    <section className="w-full pb-4">
+      <h2 className="text-xl font-semibold mb-4">Gallery</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {galleryItems.map((item, index) => (
           <div

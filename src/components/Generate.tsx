@@ -80,8 +80,8 @@ function Generate() {
   return (
     <section className="w-full">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-lg font-bold text-base-content">Generate</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-lg font-semibold text-base-content">Generate</h2>
 
         <Link
           href="/#"
