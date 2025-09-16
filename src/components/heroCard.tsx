@@ -103,7 +103,7 @@ export function HeroCarousel() {
   };
 
   return (
-    <div className="relativ w-full overflow-hidden">
+    <div className="relativ w-full overflow-hidden mt-14">
       {/* Slides wrapper */}
       <div className="flex justify-center items-center gap-6 transition-transform duration-700 ease-in-out">
         {slides.map((slide, index) => {
@@ -164,7 +164,7 @@ export function HeroCarousel() {
                     {/* right column - CTA */}
                     <div className="pointer-events-auto">
                       <button
-                        className="inline-flex items-center justify-center rounded-full bg-white px-4 py-2 text-sm font-medium text-black shadow-md hover:brightness-95"
+                        className="inline-flex items-center justify-center rounded-full bg-base-100 px-4 py-2 text-sm font-medium text-base-content shadow-md hover:brightness-75 transition-colors duration-300"
                         aria-label={slide.buttonText}
                       >
                         {slide.buttonText}
@@ -186,7 +186,7 @@ export function HeroCarousel() {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`h-2 w-2 rounded-full ${
-                index === currentSlide ? "bg-black" : "bg-black/40"
+                index === currentSlide ? "bg-base-content" : "bg-base-content/50"
               }`}
               aria-label={`Go to slide ${index + 1}`}
               title={`Go to slide ${index + 1}`}
@@ -198,7 +198,7 @@ export function HeroCarousel() {
         <div className="flex gap-4">
           <button
             onClick={prevSlide}
-            className="bg-black/40 p-2 rounded-full text-white hover:bg-black/60"
+            className="bg-base-content/40 p-2 rounded-full text-base-100 hover:bg-base-content/50 transition-colors duration-300"
             aria-label="Previous Slide"
             title="Previous Slide"
           >
@@ -206,7 +206,7 @@ export function HeroCarousel() {
           </button>
           <button
             onClick={nextSlide}
-            className="bg-black/40 p-2 rounded-full text-white hover:bg-black/60"
+            className="bg-base-content/40 p-2 rounded-full text-base-100 hover:bg-base-content/50 transition-colors duration-300"
             aria-label="Next Slide"
             title="Next Slide"
           >

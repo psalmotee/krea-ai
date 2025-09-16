@@ -50,8 +50,8 @@ const generateTools = [
     iconBg: "bg-gradient-to-br from-[#3a1d5e] to-[#9c82ba]",
   },
   {
-    title: "Video Layer",
-    description: "Edit layers in video with key audio sync",
+    title: "Video Lipsync",
+    description: "Create talking head videos from text or audio input",
     icon: <Flashlight className="w-4 h-4 text-white" />,
     badge: "New",
     buttonText: "Open",

@@ -72,7 +72,7 @@ export default function Home() {
   // ];
 
   return (
-    <div className="min-h-screen bg-base-200">
+    <div className="min-h-screen bg-base-100">
       <Header />
 
       <main className="container mx-auto py-8 space-y-12 px-4">

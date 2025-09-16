@@ -1,5 +1,6 @@
 import Image from "next/image";
 import MobbinLogo from "/public/image/mobbin-logo.png";
+import KreaLogo from "/public/image/Krea-logo-white.png";
 
 function Footer() {
   return (
@@ -7,7 +8,7 @@ function Footer() {
       <div className="container mx-auto text-base-100 flex h-16 items-center justify-between px-4">
         <div className="flex items-center space-x-2">
           <div className="bg-base-content px-1 py-0.5 rounded-lg flex justify-center items-center">
-            <h1 className="font-bold text-xl">K</h1>
+            <Image src={KreaLogo} alt="Krea AI" width={16} height={16} />
           </div>
           <span>Krea AI</span>
         </div>
